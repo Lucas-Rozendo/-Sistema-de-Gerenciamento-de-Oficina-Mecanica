@@ -1,1 +1,1 @@
-# -Sistema-de-Gerenciamento-de-Oficina-Mec-nica
+# -Sistema-de-Gerenciamento-de-Oficina-Mecanica
