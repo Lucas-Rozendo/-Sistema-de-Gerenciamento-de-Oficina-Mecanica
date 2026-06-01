@@ -142,6 +142,7 @@ FormPrincipal.java
 ## 👨‍💻 Autor
 
 Lucas Gabriel Rozendo da Silva
+Ricardo Francisco Real
 
 Estudante de Engenharia de Software – ULBRA
 
