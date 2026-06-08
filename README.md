@@ -1,149 +1,253 @@
-# 🚗 Sistema de Gerenciamento de Oficina Mecânica
+# Sistema de Gerenciamento para Oficina Mecânica
 
-Projeto desenvolvido para a disciplina de Programação Orientada a Objetos utilizando Java e Swing.
+## Desenvolvido por
 
-## 📋 Descrição
+* Lucas Gabriel Rozendo da Silva
+* Ricardo Francisco Real de Castro Junior
 
-O sistema simula o gerenciamento de uma oficina mecânica, permitindo o cadastro e controle de:
-
-- Mecânicos
-- Proprietários
-- Veículos
-- Categorias de reparo
-- Fichas de manutenção
-- Reparos realizados
-
-O projeto foi desenvolvido com foco na aplicação de conceitos de Programação Orientada a Objetos, como:
-
-- Encapsulamento
-- Herança
-- Polimorfismo
-- Classes Abstratas
-- Interfaces
-- Composição
-- Relacionamentos entre objetos
-- Coleções (ArrayList)
+Acadêmicos de Engenharia de Software – ULBRA
 
 ---
 
-## 🛠 Funcionalidades
+## Sobre o Projeto
 
-### Mecânicos
-- Cadastro de mecânicos
-- Edição de informações
-- Exclusão
-- Listagem
+O Sistema de Gerenciamento para Oficina Mecânica é uma aplicação desktop desenvolvida em Java utilizando Programação Orientada a Objetos (POO) e interface gráfica Swing no Apache NetBeans.
 
-### Veículos
-- Cadastro de veículos
-- Associação com proprietários
-- Edição
-- Exclusão
-- Listagem
-
-### Categorias
-- Cadastro de categorias de reparo
-- Edição
-- Exclusão
-- Listagem
-
-### Fichas de Manutenção
-- Cadastro de ficha para veículo
-- Controle de reparos realizados
-- Cálculo automático do custo total
-- Relatório completo da manutenção
-- Controle para impedir múltiplas fichas para o mesmo veículo
-
-### Reparos
-- Registro de serviços realizados
-- Associação com categoria
-- Associação com profissional responsável
-- Registro de custo e relato técnico
+O sistema foi criado para simular o gerenciamento de uma oficina mecânica, permitindo o controle de profissionais, proprietários, veículos, agendamentos e fichas de manutenção, aplicando conceitos fundamentais de desenvolvimento de software.
 
 ---
 
-## 🧩 Conceitos de POO Aplicados
+## Funcionalidades
 
-### Herança
+### Gerenciamento de Profissionais
 
-```java
-Profissional
-    └── Mecanico
-```
+Cadastro e gerenciamento de profissionais da oficina.
 
-### Interface
+#### Mecânicos
 
-```java
-GerenciarFichaManutencao
-```
+* Código
+* Nome completo
+* Lista de telefones
+* Número de certificação
+* Área de especialização
 
-Implementada pela classe:
+#### Atendentes
 
-```java
-FichaManutencao
-```
+* Código
+* Nome completo
+* Lista de telefones
+* Senha de acesso
 
-### Composição
+#### Operações disponíveis
 
-```java
-FichaManutencao
-    └── Reparo
-```
-
-Os reparos são criados e gerenciados dentro da ficha de manutenção.
-
----
-
-## 💻 Tecnologias Utilizadas
-
-- Java
-- Swing (JFrame e JDialog)
-- NetBeans IDE
-- Programação Orientada a Objetos
+* Inserir
+* Editar
+* Excluir
+* Listar
+* Cadastro automático de dados de teste
 
 ---
 
-## 📷 Telas do Sistema
+### Gerenciamento de Proprietários
 
-### Tela Principal
+Cadastro de clientes da oficina contendo:
 
-- Cadastro de Mecânicos
-- Cadastro de Veículos
-- Cadastro de Categorias
-- Cadastro de Fichas de Manutenção
+* Nome
+* CPF
+* Telefone
 
-### CRUD Completo
-
-- Inserir
-- Editar
-- Excluir
-- Listar
+Cada proprietário pode possuir vários veículos cadastrados.
 
 ---
 
-## 🚀 Como Executar
+### Gerenciamento de Veículos
 
-1. Clone o repositório
+Cadastro e gerenciamento de veículos vinculados aos seus proprietários.
 
-```bash
-git clone https://github.com/seuusuario/nome-do-repositorio.git
-```
+#### Informações cadastradas
 
-2. Abra o projeto no NetBeans
+* Placa
+* Marca
+* Modelo
+* Ano de fabricação
+* Cor
+* Proprietário
 
-3. Execute a classe:
+#### Operações disponíveis
 
-```java
-FormPrincipal.java
+* Inserir
+* Editar
+* Excluir
+* Listar
+* Cadastro automático de dados de teste
+
+---
+
+### Gerenciamento de Categorias
+
+As categorias são utilizadas para classificar os reparos realizados nos veículos.
+
+#### Categorias de exemplo
+
+* Motor
+* Freios
+* Suspensão
+* Sistema Elétrico
+* Estética Automotiva
+
+#### Operações disponíveis
+
+* Inserir
+* Editar
+* Excluir
+* Listar
+* Cadastro automático de categorias
+
+---
+
+### Gerenciamento de Agendamentos
+
+Permite controlar os serviços programados para os veículos.
+
+#### Informações do agendamento
+
+* Código
+* Data
+* Hora
+* Tipo de serviço
+* Valor orçado
+* Veículo associado
+* Mecânico responsável
+
+#### Validações implementadas
+
+* Não permite veículos inexistentes.
+* Não permite mecânicos inexistentes.
+* Não permite profissionais que não sejam mecânicos.
+* Não permite códigos duplicados.
+* Não permite conflito de horário para o mesmo veículo.
+* Não permite conflito de horário para o mesmo mecânico.
+* Validação de data e horário.
+
+#### Relatórios disponíveis
+
+* Relatório por veículo.
+* Relatório por mecânico.
+* Relatório por data.
+* Exibição geral dos cadastros.
+
+#### Funcionalidades extras
+
+* Cadastro automático de agendamentos de teste.
+* Consulta rápida dos registros cadastrados.
+
+---
+
+### Gerenciamento de Fichas de Manutenção
+
+Cada veículo pode possuir uma ficha de manutenção contendo diversos reparos realizados ao longo do tempo.
+
+#### Informações da ficha
+
+* Código da ficha
+* Veículo associado
+* Lista de reparos
+
+#### Funcionalidades disponíveis
+
+* Inserção de reparos
+* Edição de reparos
+* Exclusão de reparos
+* Relatório completo da ficha
+* Cálculo automático do custo total
+* Contagem automática da quantidade de reparos
+* Cadastro automático de fichas de teste
+
+---
+
+### Gerenciamento de Reparos
+
+Cada reparo registrado possui:
+
+* Código
+* Nome do serviço
+* Data de realização
+* Custo
+* Relato do problema
+* Categoria
+* Profissional responsável
+
+---
+
+## Tecnologias Utilizadas
+
+* Java
+* Apache NetBeans
+* Java Swing
+* Collections Framework (ArrayList)
+* Programação Orientada a Objetos
+
+---
+
+## Conceitos Aplicados
+
+* Encapsulamento
+* Herança
+* Polimorfismo
+* Classes Abstratas
+* Interfaces
+* Agregação
+* Relacionamento entre classes
+* CRUD (Create, Read, Update e Delete)
+* Tratamento de Exceções
+* Interface Gráfica com Swing
+
+---
+
+## Estrutura do Projeto
+
+```text
+classes/
+├── Profissional
+├── Mecanico
+├── Atendente
+├── Proprietario
+├── Veiculo
+├── Categoria
+├── Agendamento
+├── Reparo
+├── FichaManutencao
+└── Interfaces
+
+telas/
+├── FormPrincipal
+├── CadastroMecanicos
+├── CadastroVeiculos
+├── CadastroCategorias
+├── CadastroFichasManutencao
+└── GerenciarAgendamento
 ```
 
 ---
 
-## 👨‍💻 Autor
+## Destaques do Projeto
 
-- Lucas Gabriel Rozendo da Silva
-- Ricardo Francisco Real
+* Interface gráfica desenvolvida com Java Swing.
+* Utilização de classes abstratas para modelagem dos profissionais.
+* Associação entre veículos e proprietários.
+* Associação entre agendamentos, veículos e mecânicos.
+* Controle de histórico de manutenção através das fichas.
+* Relatórios para consulta dos dados cadastrados.
+* Dados de teste para facilitar demonstrações e avaliações.
 
-Estudante de Engenharia de Software – ULBRA
+---
 
-Projeto desenvolvido para fins acadêmicos.
+## Objetivo Acadêmico
+
+Projeto desenvolvido para aplicação prática dos conceitos de Programação Orientada a Objetos, modelagem de classes, relacionamentos entre objetos, interfaces gráficas e manipulação de coleções em Java.
+
+---
+
+## Licença
+
+Projeto desenvolvido exclusivamente para fins educacionais e acadêmicos.
